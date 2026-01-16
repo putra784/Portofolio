@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Putra - Fullstack Developer</title>
+    <link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+    <div class="particles" id="particles"></div>
+
+    <nav class="nav-bar">
+        <div class="logo"><img src="assets/img/Logo.png" alt="Logo"></div>
+        <ul class="link-lists">
+            <li><a class="nav-links" href="index.html">Home</a></li>
+            <li><a class="nav-links" href="about.html">About</a></li>
+            <li><a class="nav-links" href="projects.html">Projects</a></li>
+            <li><a class="nav-links" href="contact.html">Contact</a></li>
+        </ul>
+        <div class="theme-toggle"><img src="assets/img/darkmode.png" alt=""></div>
+    </nav>
+
+    <div class="container">
+        <div class="profile-section">
+            <div class="profile-image">
+                <img src="assets/img/Profil-Putera.jpeg" alt="Profile Picture">
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h1 class="greeting">Hi, I'm <span class="name">Putra</span></h1>
+            <h2 class="title">Fullstack Developer</h2>
+            <p class="quote">
+                "Any fool can write code that a computer can understand. Good programmers write code that humans can understand." — Martin Fowler
+            </p>
+            <div class="buttons">
+                <a href="contact.html" class="btn btn-primary">Hire me</a>
+                <a href="assets/Document/CV I Gede Puterayasa.pdf" target="_blank" class="btn btn-secondary">Resume</a>
+            </div>
+        </div>
+    </div>
+
+    <section class="tools-section">
+        <h2 class="section-title">Tools I Know</h2>
+        <div class="tools-scroll-container">
+            <div class="tools-scroll-wrapper" id="toolsWrapper"></div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects-section">
+        <h2 class="section-title">Recent Projects</h2>
+        <div class="projects-grid" id="projectsGrid">
+            <!-- Projects akan di-generate oleh JavaScript -->
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
