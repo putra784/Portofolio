@@ -5,13 +5,21 @@ const sizes = [6, 8, 10, 12];
 for (let i = 0; i < 15; i++) {
     const particle = document.createElement('div');
     particle.className = 'particle';
-    particle.style.width = sizes[Math.floor(Math.random() * sizes.length)] + 'px';
-    particle.style.height = particle.style.width;
-    particle.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+
+    const size = sizes[Math.floor(Math.random() * sizes.length)];
+    const color = colors[Math.floor(Math.random() * colors.length)];
+
+    particle.style.width = size + 'px';
+    particle.style.height = size + 'px';
+    particle.style.backgroundColor = color;
+
+    particle.style.boxShadow = `0 0 10px ${color}`;
+
     particle.style.left = Math.random() * 100 + '%';
     particle.style.top = Math.random() * 100 + '%';
     particle.style.animationDelay = Math.random() * 15 + 's';
     particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
+
     particlesContainer.appendChild(particle);
 }
 
@@ -89,9 +97,8 @@ function generateTools() {
     // Duplicate untuk infinite scroll
     toolsWrapper.innerHTML = toolsHTML + toolsHTML;
 }
-
-
-        // Generate Projects
+ 
+// Generate Projects
         function generateProjects() {
             const projectsGrid = document.getElementById('projectsGrid');
             projectsGrid.innerHTML = projects.map(project => `

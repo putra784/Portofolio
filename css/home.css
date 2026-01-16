@@ -21,13 +21,28 @@ body {
   width: 100%;
   height: 100%;
   pointer-events: none;
-  z-index: 1;
+  z-index: -999;
 }
 
 .particle {
   position: absolute;
   border-radius: 50%;
-  animation: float 15s infinite;
+  animation:
+    float 15s infinite linear,
+    glow 3s ease-in-out infinite;
+
+  box-shadow:
+    0 0 8px currentColor,
+    0 0 16px currentColor;
+}
+
+@keyframes glow {
+  0%, 100% {
+    filter: brightness(1);
+  }
+  50% {
+    filter: brightness(1.4);
+  }
 }
 
 @keyframes float {
@@ -122,6 +137,7 @@ body {
   padding: 60px 80px;
   max-width: 1400px;
   margin: 0 auto;
+  margin-bottom: 20px;
   position: relative;
   z-index: 10;
 }
@@ -223,20 +239,22 @@ body {
 .btn-secondary {
   background: transparent;
   color: white;
-  border: 2px solid white;
+  border: 2px solid #9b6fff;
 }
 
 .btn-secondary:hover {
-  background: white;
+  background: #9b6fff;
   color: #0a0a0a;
+  box-shadow: 0 10px 30px rgba(107, 79, 255, 0.5);
   transform: translateY(-3px);
 }
 
 /* Tools Section */
 .tools-section {
-  padding: 80px 0px;
+  padding: 100px 0px; /* Ditambah dari 80px menjadi 100px */
   max-width: 1400px;
   margin: 0 auto;
+  margin-bottom: 10px; /* Menambah jarak ke section berikutnya */
 }
 
 .section-title {
@@ -322,7 +340,7 @@ body {
 
 /* Projects Section */
 .projects-section {
-  padding: 80px 20px;
+  padding: 100px 20px; /* Ditambah dari 80px menjadi 100px */
   max-width: 1400px;
   margin: 0 auto;
 }
@@ -442,14 +460,55 @@ body {
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 827px) {
+  .container {
+    flex-direction: column;
+    padding: 40px 20px;
+    text-align: center;
+  }
+
+  .profile-section {
+    margin-bottom: 40px;
+  }
+
+  .profile-image {
+    width: 260px;
+    height: 260px;
+    margin: 0 auto;
+  }
+
+  .content-section {
+    padding-left: 0;
+  }
+
+  .greeting,
+  .title {
+    font-size: 36px;
+  }
+
+  .quote {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .buttons {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    padding: 12px 28px;
+    font-size: 16px;
+  }
+
   .section-title {
     font-size: 2rem;
   }
 
   .tools-section,
   .projects-section {
-    padding: 50px 15px;
+    padding: 60px 15px;
+    margin-bottom: 10px;
   }
 
   .tool-item {
@@ -477,9 +536,33 @@ body {
 }
 
 @media (max-width: 480px) {
+  .container {
+    margin-bottom: 60px;
+  }
+
+  .btn {
+    padding: 12px 28px;
+    font-size: 16px;
+  }
+
+  .quote {
+    font-size: 12x;
+  }
+
   .section-title {
     font-size: 1.5rem;
     margin-bottom: 40px;
+  }
+
+  .greeting,
+  .title {
+    font-size: 32px;
+  }
+
+  .tools-section,
+  .projects-section {
+    padding: 50px 15px;
+    margin-bottom: 50px;
   }
 
   .tool-item {
