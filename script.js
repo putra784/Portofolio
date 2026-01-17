@@ -1,3 +1,30 @@
+const hamburger = document.querySelector('.hamburger');
+        const linkLists = document.querySelector('.link-lists');
+        const navLinks = document.querySelectorAll('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            linkLists.classList.toggle('active');
+            document.body.style.overflow = linkLists.classList.contains('active') ? 'hidden' : '';
+        });
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                linkLists.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.nav-bar')) {
+                hamburger.classList.remove('active');
+                linkLists.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+
 const particlesContainer = document.getElementById('particles');
 const colors = ['#3b82f6', '#ef4444', '#22c55e', '#eab308'];
 const sizes = [6, 8, 10, 12];
