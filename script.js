@@ -25,6 +25,14 @@ const hamburger = document.querySelector('.hamburger');
             }
         });
 
+        window.addEventListener('scroll', () => {
+            if (linkLists.classList.contains('active')) {
+                hamburger.classList.remove('active');
+                linkLists.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        })
+
 const particlesContainer = document.getElementById('particles');
 const colors = ['#3b82f6', '#ef4444', '#22c55e', '#eab308'];
 const sizes = [6, 8, 10, 12];
